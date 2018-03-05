@@ -57,11 +57,12 @@
         </activity>
         <activity
             android:name="ke.co.kizzi.scanitmerchant.HomeView"
+            android:label="Home"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="ke.co.kizzi.scanitmerchant.SignInView"
-            android:label="SIGN IN"
+            android:label="Sign In"
             android:screenOrientation="portrait" />
         <activity
             android:name="ke.co.kizzi.scanitmerchant.ProfileView"
@@ -69,6 +70,7 @@
             android:parentActivityName="ke.co.kizzi.scanitmerchant.HomeView"
             android:screenOrientation="portrait" />
         <activity android:name="ke.co.kizzi.scanitmerchant.AddProductView" />
+        <activity android:name="ke.co.kizzi.scanitmerchant.ProductsView" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

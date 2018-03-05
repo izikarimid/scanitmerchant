@@ -38,17 +38,19 @@
         <activity
             android:name=".HomeView"
             android:screenOrientation="portrait"
+            android:label="Home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignInView"
-            android:label="SIGN IN"
+            android:label="Sign In"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ProfileView"
             android:label="Profile"
             android:parentActivityName=".HomeView"
             android:screenOrientation="portrait" />
-        <activity android:name=".AddProductView"></activity>
+        <activity android:name=".AddProductView" />
+        <activity android:name=".ProductsView"></activity>
     </application>
 
 </manifest>

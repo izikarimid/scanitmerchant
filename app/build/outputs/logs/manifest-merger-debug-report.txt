@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
 MERGED from [com.journeyapps:zxing-android-embedded:3.0.1] /Users/ananda/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.0.1.aar/7a8de56b8bb7596bbf5b789d261cac22/AndroidManifest.xml:17:1-57:12
 MERGED from [com.android.support:design:26.1.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/fa01489679272a61172e2cca1a885836/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1e2fede5ed61b7149bfefb821a905d53/AndroidManifest.xml:17:1-31:12
@@ -19,20 +19,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /Users/ananda/.gradl
 MERGED from [com.android.support:support-core-ui:26.1.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/a9eaf6bd84bc3bad58520fe7a6752228/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/75a01a9e0ffb72ee048d1218fc783bde/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/5a28d0758fba25f5bad6b8f5ba5d9726/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:2:11-69
@@ -95,7 +95,7 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.0.1] /Users/ananda/.gradle
 	android:name
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:18:19-67
 application
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:20:5-52:19
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:20:5-54:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.0.1] /Users/ananda/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.0.1.aar/7a8de56b8bb7596bbf5b789d261cac22/AndroidManifest.xml:47:5-55:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.0.1] /Users/ananda/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.0.1.aar/7a8de56b8bb7596bbf5b789d261cac22/AndroidManifest.xml:47:5-55:19
 MERGED from [com.android.support:design:26.1.0] /Users/ananda/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/fa01489679272a61172e2cca1a885836/AndroidManifest.xml:25:5-29:19
@@ -159,35 +159,41 @@ ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/An
 	android:name
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:35:27-74
 activity#ke.co.kizzi.scanitmerchant.HomeView
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:38:9-41:59
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:38:9-42:59
 	android:screenOrientation
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:40:13-49
+	android:label
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:41:13-33
 	android:theme
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:42:13-56
 	android:name
 		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:39:13-37
 activity#ke.co.kizzi.scanitmerchant.SignInView
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:42:9-45:52
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:43:9-46:52
 	android:screenOrientation
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:45:13-49
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:46:13-49
 	android:label
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:44:13-36
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:45:13-36
 	android:name
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:43:13-39
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:44:13-39
 activity#ke.co.kizzi.scanitmerchant.ProfileView
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:46:9-50:52
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:47:9-51:52
 	android:screenOrientation
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:50:13-49
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:51:13-49
 	android:parentActivityName
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:49:13-51
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:50:13-51
 	android:label
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:48:13-36
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:49:13-36
 	android:name
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:47:13-40
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:48:13-40
 activity#ke.co.kizzi.scanitmerchant.AddProductView
-ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:51:9-61
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:52:9-52
 	android:name
-		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:51:19-49
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:52:19-49
+activity#ke.co.kizzi.scanitmerchant.ProductsView
+ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:53:9-59
+	android:name
+		ADDED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml:53:19-47
 uses-sdk
 INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ananda/Documents/Android_Studio/ScanitMerchant/app/src/main/AndroidManifest.xml

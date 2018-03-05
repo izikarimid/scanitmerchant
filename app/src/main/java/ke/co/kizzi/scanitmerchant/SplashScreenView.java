@@ -35,13 +35,13 @@ public class SplashScreenView extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i;
-              //  if (sharedpreferences.contains("token")) {
+                if (sharedpreferences.contains("token")) {
                     i = new Intent(SplashScreenView.this, HomeView.class);
                     startActivity(i);
-//                } else {
-//                    i = new Intent(SplashScreenView.this, SignInView.class);
-//                    startActivity(i);
-//                }
+                } else {
+                    i = new Intent(SplashScreenView.this, SignInView.class);
+                    startActivity(i);
+                }
 
                 // close this activity
                 finish();
