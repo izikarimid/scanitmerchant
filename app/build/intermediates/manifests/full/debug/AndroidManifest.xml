@@ -69,8 +69,16 @@
             android:label="Profile"
             android:parentActivityName="ke.co.kizzi.scanitmerchant.HomeView"
             android:screenOrientation="portrait" />
-        <activity android:name="ke.co.kizzi.scanitmerchant.AddProductView" />
-        <activity android:name="ke.co.kizzi.scanitmerchant.ProductsView" />
+        <activity
+            android:name="ke.co.kizzi.scanitmerchant.AddProductView"
+            android:label="Add Product"
+            android:parentActivityName="ke.co.kizzi.scanitmerchant.HomeView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ke.co.kizzi.scanitmerchant.ProductsView"
+            android:label="Products"
+            android:parentActivityName="ke.co.kizzi.scanitmerchant.HomeView"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

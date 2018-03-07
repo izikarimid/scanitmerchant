@@ -42,7 +42,7 @@ import ke.co.kizzi.scanitmerchant.adapter.Variables;
 public class HomeView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ImageView btnScan;
-    String qr_code = "";
+    String barcode = "";
 
     //create sessions to store/retrieve selections
     SharedPreferences sharedpreferences;
@@ -54,7 +54,7 @@ public class HomeView extends AppCompatActivity
     private static Variables address = new Variables();
     // API urls
     private static String URL_LOGOUT = address.getAddress() + "/logout";
-    private  static String URL_SCAN_PRODUCT = address.getAddress() + "/scanProduct";
+    private  static String URL_SCAN_PRODUCT = address.getAddress() + "/checkproduct";
 
     ProgressDialog pDialog;
     AlertDialogManager alert = new AlertDialogManager();
@@ -266,16 +266,16 @@ public class HomeView extends AppCompatActivity
                 if(data.getStringExtra("SCAN_RESULT") != null){
 
                     //get the extras that are returned from the intent
-                    qr_code = data.getStringExtra("SCAN_RESULT");
+                    barcode = data.getStringExtra("SCAN_RESULT");
                     String format = data.getStringExtra("SCAN_RESULT_FORMAT");
-                    //Toast.makeText(getApplicationContext(),id_number,Toast.LENGTH_SHORT).show();
-
-                    if(qr_code.length() < 1){
-                        Toast.makeText(getApplicationContext(),"Please scan a valid id code",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),barcode,Toast.LENGTH_SHORT).show();
+                    Log.d("barcode",barcode);
+                    if(barcode.length() < 1){
+                        Toast.makeText(getApplicationContext(),"Please scan a valid barcode",Toast.LENGTH_SHORT).show();
                     }else if(!isNetworkAvailable()){
                         Toast.makeText(getApplicationContext(),"No internet connection",Toast.LENGTH_SHORT).show();
                     }else{
-                        //new verifyStudent().execute();
+                        new checkProduct().execute();
                     }
 
                 }
@@ -286,6 +286,165 @@ public class HomeView extends AppCompatActivity
             //}
         } else {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+
+    /**
+     * Async task class to get json by making HTTP call
+     * */
+    private class checkProduct extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(HomeView.this);
+            pDialog.setMessage("checking...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+            // Creating service handler class instance
+            ServiceHandler sh = new ServiceHandler();
+            // Making a request to url and getting response
+            String json = sh.makeServiceCall(URL_SCAN_PRODUCT+"/"+barcode+"?api_token="+sharedpreferences.getString("token",null), ServiceHandler.GET,null);
+
+            //shows the response that we got from the http request on the logcat
+            Log.d("Response: ", "> " + json);
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (pDialog.isShowing())
+                        pDialog.dismiss();
+
+                }
+            });
+
+            if (json != null) {
+                try {
+                    JSONObject jsonObj = new JSONObject(json);
+                    String token = null;
+                    if (jsonObj != null) {
+                        String status = jsonObj.get("status").toString();
+                        if (status.equals("success")) {
+                            // Existing data
+
+                            Boolean product_exists = jsonObj.getBoolean("product_exists");
+
+                            if(product_exists){
+
+                                final JSONObject productObj = jsonObj.getJSONObject("product");
+                                Toast.makeText(getApplicationContext(),productObj+"",Toast.LENGTH_SHORT).show();
+
+//                                runOnUiThread(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//                                        try {
+//                                            String name = studentObj.getString("name");
+//                                            String student_status = studentObj.getString("status");
+//                                            String registration_date = studentObj.getString("created_at");
+//                                            String email = studentObj.getString("email");
+//                                            String id_number = studentObj.getString("id_number");
+//
+//                                            Bundle bundle = new Bundle();
+//                                            bundle.putString("name",name);
+//                                            bundle.putString("student_status",student_status);
+//                                            bundle.putString("registration_date",registration_date);
+//                                            bundle.putString("email",email);
+//                                            bundle.putString("id_number",id_number);
+//                                            bundle.putString("qr_code",qr_code);
+//                                            Intent i = new Intent(HomeView.this,AddProductView.class);
+//                                            i.putExtras(bundle);
+//                                            startActivity(i);
+//
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
+//                                        if (pDialog.isShowing())
+//                                            pDialog.dismiss();
+//
+//                                    }
+//                                });
+
+                            }else{
+                                Toast.makeText(getApplicationContext(),"Product doesnt exist proceed to creating one",Toast.LENGTH_SHORT).show();
+                                Log.d("product_not_there","product_not_there");
+
+
+                            }
+
+
+
+
+                        }
+                        else if(status.equals("error")){
+                            final String message = jsonObj.getString("message");
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    alert.showAlertDialog(
+                                            HomeView.this,
+                                            "Failed",
+                                            message,
+                                            false);
+                                    if (pDialog.isShowing())
+                                        pDialog.dismiss();
+                                }
+                            });
+
+                        }
+
+                        else {
+                            // Existing data
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    alert.showAlertDialog(
+                                            HomeView.this,
+                                            "Failed",
+                                            "Invalid student number provided",
+                                            false);
+                                    pDialog.dismiss();
+                                }
+                            });
+
+
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            } else {
+                // Error in connection
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        alert.showAlertDialog(
+                                HomeView.this,
+                                "Error",
+                                "No internet connection",
+                                false);
+                        pDialog.dismiss();
+                    }
+                });
+
+            }
+            return null;
+        }
+        protected void onPostExecute(Void result) {
+            // dismiss the dialog once done
+            super.onPostExecute(result);
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+            //add intent
         }
     }
 

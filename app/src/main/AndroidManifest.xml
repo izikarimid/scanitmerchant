@@ -49,8 +49,14 @@
             android:label="Profile"
             android:parentActivityName=".HomeView"
             android:screenOrientation="portrait" />
-        <activity android:name=".AddProductView" />
-        <activity android:name=".ProductsView"></activity>
+        <activity android:name=".AddProductView"
+            android:label="Add Product"
+            android:parentActivityName=".HomeView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ProductsView"
+            android:label="Products"
+            android:parentActivityName=".HomeView"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
