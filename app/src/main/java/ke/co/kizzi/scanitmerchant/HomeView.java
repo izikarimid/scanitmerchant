@@ -1,6 +1,7 @@
 package ke.co.kizzi.scanitmerchant;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +23,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -338,13 +341,16 @@ public class HomeView extends AppCompatActivity
                             if(product_exists){
 
                                 final JSONObject productObj = jsonObj.getJSONObject("product");
-                                Toast.makeText(getApplicationContext(),productObj+"",Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getApplicationContext(),productObj+"",Toast.LENGTH_SHORT).show();
 
-//                                runOnUiThread(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-//                                        try {
-//                                            String name = studentObj.getString("name");
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                        if (pDialog.isShowing())
+                                            pDialog.dismiss();
+                                            updateDialog();;
+                                            String name = productObj.getString("name");
 //                                            String student_status = studentObj.getString("status");
 //                                            String registration_date = studentObj.getString("created_at");
 //                                            String email = studentObj.getString("email");
@@ -360,20 +366,28 @@ public class HomeView extends AppCompatActivity
 //                                            Intent i = new Intent(HomeView.this,AddProductView.class);
 //                                            i.putExtras(bundle);
 //                                            startActivity(i);
-//
-//                                        } catch (JSONException e) {
-//                                            e.printStackTrace();
-//                                        }
-//                                        if (pDialog.isShowing())
-//                                            pDialog.dismiss();
-//
-//                                    }
-//                                });
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                    }
+                                });
 
                             }else{
-                                Toast.makeText(getApplicationContext(),"Product doesnt exist proceed to creating one",Toast.LENGTH_SHORT).show();
-                                Log.d("product_not_there","product_not_there");
-
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(), "Product doesnt exist proceed to creating one", Toast.LENGTH_SHORT).show();
+                                        Log.d("product_not_there", "product_not_there");
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("barcode", barcode);
+                                        Intent i = new Intent(HomeView.this, AddProductView.class);
+                                        i.putExtras(bundle);
+                                        startActivity(i);
+                                    }
+                                });
 
                             }
 
@@ -446,6 +460,33 @@ public class HomeView extends AppCompatActivity
                 pDialog.dismiss();
             //add intent
         }
+    }
+
+
+    public void updateDialog(){
+        // custom dialog
+        final Dialog dialog = new Dialog(HomeView.this);
+        dialog.setContentView(R.layout.update_product_dialog);
+        dialog.setTitle("Update Product");
+
+        final EditText txtQuantity = (EditText) dialog.findViewById(R.id.txtQuantity);
+        Button btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
+        // if button is clicked, close the custom dialog
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(txtQuantity.getText().toString().trim().length() > 0 ){
+                    //reasons = txtReason.getText().toString().trim();
+                    //new updateProduct().execute();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Please input the quantity",Toast.LENGTH_SHORT).show();
+                }
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
     }
 
 
